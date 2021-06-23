@@ -1,0 +1,4156 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dul="http://www.loa.istc.cnr.it/ontologies/DUL.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM">
+        <!--  <imports rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl"/>  -->
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBuilding -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBuilding">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasPart"/>
+        <inverseOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isBuildingOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasFloor"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasRoom"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isLocationOf"/>
+        <rdfs:label xml:lang="en">has building</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasFloor -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasFloor">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasPart"/>
+        <inverseOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isFloorOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasRoom"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isLocationOf"/>
+        <rdfs:label xml:lang="en">has floor</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasInstallationInRoom -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasInstallationInRoom">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isPartOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#hasLocation"/>
+        <inverseOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isInstallationLocationOfDevice"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Device"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasPart -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#hasPart"/>
+        <inverseOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasRoom -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasRoom">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasPart"/>
+        <inverseOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isRoomOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isLocationOf"/>
+        <rdfs:label xml:lang="en">has room</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isBuildingOf -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isBuildingOf">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isFloorOf"/>
+        <propertyDisjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isRoomOf"/>
+        <rdfs:label xml:lang="en">is building of</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isFloorOf -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isFloorOf">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building"/>
+        <rdfs:label xml:lang="en">is floor of</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isInstallationLocationOfDevice -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isInstallationLocationOfDevice">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasPart"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#isLocationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Device"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isLocationOf -->
+<!--
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isLocationOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#isLocationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building"/>
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building"/>
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Device"/>
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+                    <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has device</rdfs:label>
+    </ObjectProperty>
+    -->
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isPartOf -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isRoomOf -->
+
+    <ObjectProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isRoomOf">
+        <rdfs:subPropertyOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+        <rdfs:range rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+        <rdfs:label xml:lang="en">is room of</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/ontologies/DUL.owl#hasLocation -->
+
+    <ObjectProperty rdf:about="http://www.loa.istc.cnr.it/ontologies/DUL.owl#hasLocation"/>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/ontologies/DUL.owl#hasPart -->
+
+    <ObjectProperty rdf:about="http://www.loa.istc.cnr.it/ontologies/DUL.owl#hasPart"/>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/ontologies/DUL.owl#isLocationOf -->
+
+    <ObjectProperty rdf:about="http://www.loa.istc.cnr.it/ontologies/DUL.owl#isLocationOf"/>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/ontologies/DUL.owl#isPartOf -->
+
+    <ObjectProperty rdf:about="http://www.loa.istc.cnr.it/ontologies/DUL.owl#isPartOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBIMId -->
+
+    <DatatypeProperty rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBIMId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility" />
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label>has string ID in BIM system</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ActiveCooledBeam -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ActiveCooledBeam">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CooledBeam"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Actuator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Actuator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticAirWasherHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticAirWasherHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticAtomizingHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticAtomizingHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticCompressedAirNozzleHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticCompressedAirNozzleHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticPanHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticPanHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticRigidMediaHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticRigidMediaHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticUltrasonicHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticUltrasonicHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticWettedElementHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AdiabaticWettedElementHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirConditioningUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirConditioningUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryEquipment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirCooled -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirCooled">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirCooledChiller -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirCooledChiller">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Chiller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirHandler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirHandler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryEquipment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirParticleFilter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirParticleFilter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirReleaseValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirReleaseValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirStation -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirStation">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MedicalDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminalBox -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminalBox">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AlarmPanel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AlarmPanel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AmMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AmMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Amplifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Amplifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Antenna -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Antenna">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AntivacuumValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AntivacuumValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedButaneHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedButaneHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedElectricHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedElectricHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedNaturalGasHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedNaturalGasHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedPropaneHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedPropaneHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedSteamHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AssistedSteamHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualOutlet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualOutlet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Outlet"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BackDraftDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BackDraftDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BalancingDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BalancingDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Basin -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Basin">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Bath -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Bath">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Battery -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Battery">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricFlowStorageDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Bell -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Bell">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BeltDrive -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BeltDrive">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MotorConnection"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BendCableCarrierFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BendCableCarrierFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BendDuctFittingDuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BendDuctFittingDuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BendPipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BendPipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Bidet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Bidet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BirdCageStackTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BirdCageStackTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StackTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BlastDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BlastDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Boiler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Boiler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BoosterCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BoosterCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BreakGlassButton -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BreakGlassButton">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BreakPressureTank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BreakPressureTank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BreechingInlet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BreechingInlet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSuppressionTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Building">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+        <rdfs:subClassOf rdf:resource="http://www.student.dtu.dk/~mhoras/bot#Building"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#DesignedArtifact"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Device"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+        <hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBIMId"/>
+        </hasKey>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Burner -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Burner">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BusBarCableSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#BusBarCableSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CHPElectricGenerator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CHPElectricGenerator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricGenerator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableLadderSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableLadderSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableSegment"/>
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableTraySegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableTraySegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableTrunkingSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableTrunkingSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Camera -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Camera">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CapacitorBank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CapacitorBank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricFlowStorageDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalAirFoilFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalAirFoilFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalBackwardInclinedCurvedFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalBackwardInclinedCurvedFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalForwardCurvedFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalForwardCurvedFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalRadialFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CentrifugalRadialFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ChangeOverValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ChangeOverValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CheckValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CheckValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Chiller -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Chiller">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CinglestageCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CinglestageCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CircuitBreaker -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CircuitBreaker">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CirculatorPump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CirculatorPump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Cistern -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Cistern">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommissioningValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommissioningValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsOutlet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsOutlet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Outlet"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CompactFluorescentLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CompactFluorescentLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CompressedAirFilter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CompressedAirFilter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMovingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Computer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Computer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConductanceSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConductanceSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConductorCableSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConductorCableSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConduitSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConduitSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConnectorCableFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConnectorCableFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConnectorDuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConnectorDuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConnectorPipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConnectorPipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConstantFlowAirTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ConstantFlowAirTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminalBox"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ContactSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ContactSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Contactor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Contactor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ControlDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ControlDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ControlPanel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ControlPanel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Controller -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Controller">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Convector -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Convector">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SpaceHeater"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CooledBeam -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CooledBeam">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CoolingTower -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CoolingTower">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CoreCableSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CoreCableSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CouplingMotorConnection -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CouplingMotorConnection">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MotorConnection"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CowlStackTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CowlStackTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StackTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CrossCableCarrierFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CrossCableCarrierFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CulvertPipeSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CulvertPipeSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CurrentTransformer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CurrentTransformer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Transformer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CyclonicInterceptor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CyclonicInterceptor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Interceptor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DCElectricMotor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DCElectricMotor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricMotor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DXCoolingCoil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DXCoolingCoil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DataJunctionBox -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DataJunctionBox">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionBox"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DataOutlet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DataOutlet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Outlet"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Dehumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Dehumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryEquipment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Device -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Device">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+        <rdfs:subClassOf rdf:resource="http://www.student.dtu.dk/~mhoras/bot#Element"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#DesignedArtifact"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+        <hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBIMId"/>
+        </hasKey>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Diffuser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Diffuser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DimmerSwitch -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DimmerSwitch">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectDriveMotorConnection -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectDriveMotorConnection">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MotorConnection"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeAirWasher -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeAirWasher">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativePackagedRotaryAirCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativePackagedRotaryAirCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeRandomMediaAirCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeRandomMediaAirCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeRigidMediaAirCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeRigidMediaAirCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeSlingersPackagedAirCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectEvaporativeSlingersPackagedAirCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionBrazedPlateEvaporator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionBrazedPlateEvaporator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionEvaporator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionEvaporator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionShellAndTubeEvaporator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionShellAndTubeEvaporator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionTubeInTubeEvaporator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectExpansionTubeInTubeEvaporator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectionSourceLightFixture -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DirectionSourceLightFixture">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightFixture"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Dishwasher -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Dishwasher">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Display -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Display">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionElement -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionElement">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Device"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DivertingValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DivertingValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DoubleCheckValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DoubleCheckValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DoubleRegulatingValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DoubleRegulatingValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DrawOffCockValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DrawOffCockValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSilencer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSilencer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTreatmentDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DynamicCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DynamicCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EarthLeakageCircuitBreaker -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EarthLeakageCircuitBreaker">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EarthingSwitch -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EarthingSwitch">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricActuator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricActuator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Actuator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricConsumerUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricConsumerUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricDistributionBoard"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricCooker -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricCooker">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricDistributionBoard -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricDistributionBoard">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricDistributionBoard"/>
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricFlowStorageDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricFlowStorageDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowStorageDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricGenerator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricGenerator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricHeatingCoil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricHeatingCoil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricMotor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricMotor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricSwitchBoard -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricSwitchBoard">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricDistributionBoard"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricTimeControl -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricTimeControl">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectromagneticProtectiveDeviceTrippingUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectromagneticProtectiveDeviceTrippingUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDeviceTrippingUnit"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectronicProtectiveDeviceTrippingUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectronicProtectiveDeviceTrippingUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDeviceTrippingUnit"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EmergencyStop -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EmergencyStop">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EndsuctionPump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EndsuctionPump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMeter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Engine -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Engine">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EngineGenerator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EngineGenerator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricGenerator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EntryCableFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EntryCableFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EntryDuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EntryDuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EntryPipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EntryPipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooledCondenser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooledCondenser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExitCableFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExitCableFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExitDuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExitDuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExitPipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExitPipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExpansionTank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExpansionTank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExternalCombustionEngine -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ExternalCombustionEngine">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Engine"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility">
+        <rdfs:subClassOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#PhysicalObject"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMovingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FaucetValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FaucetValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fax -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fax">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FeedAirUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FeedAirUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MedicalDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FeedAndExpansionTank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FeedAndExpansionTank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTreatmentDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FinnedTubeBundle -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FinnedTubeBundle">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TubeBundle"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireHydrant -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireHydrant">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSuppressionTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSmokeDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSmokeDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSuppressionTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSuppressionTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FixedPlateCounterFlowExchanger -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FixedPlateCounterFlowExchanger">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FixedPlateCrossFlowExchanger -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FixedPlateCrossFlowExchanger">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FixedPlateParallelFlowExchanger -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FixedPlateParallelFlowExchanger">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlatovalDuctSilencer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlatovalDuctSilencer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSilencer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlexibleDuctSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlexibleDuctSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlexiblePipeSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlexiblePipeSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloatingController -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloatingController">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Controller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloodedShellAndTubeEvaporator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloodedShellAndTubeEvaporator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Floor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+        <rdfs:subClassOf rdf:resource="http://www.student.dtu.dk/~mhoras/bot#Storey"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#DesignedArtifact"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+        <hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBIMId"/>
+        </hasKey>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloorTrap -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloorTrap">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloorWaste -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FloorWaste">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMovingDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMovingDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowStorageDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowStorageDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTreatmentDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTreatmentDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionFlowElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FluorescentLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FluorescentLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlushingValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlushingValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FormedDuct -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FormedDuct">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingElectricHeater -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingElectricHeater">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingWaterCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingWaterCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingWaterHeater -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FreeStandingWaterHeater">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Freezer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Freezer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FrequencyMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FrequencyMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FrequencyTransformer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FrequencyTransformer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Transformer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FridgeFreezer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FridgeFreezer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FumeHoodExhaust -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FumeHoodExhaust">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FuseDisconnector -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FuseDisconnector">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasCockValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasCockValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasDetectionPanel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasDetectionPanel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasHeatingCoil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasHeatingCoil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMeter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasTapValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GasTapValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Gateway -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Gateway">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GravityDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GravityDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GravityReliefDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GravityReliefDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GreaseInterceptor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GreaseInterceptor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Interceptor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Grille -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Grille">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GullySump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GullySump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GullyTrap -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GullyTrap">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GutterPipeSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#GutterPipeSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HalogenLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HalogenLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HandDryer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HandDryer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HandOperatedActuator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HandOperatedActuator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Actuator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HarmonicFilter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HarmonicFilter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricFlowStorageDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatExchanger -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatExchanger">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatPipe -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatPipe">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatRecoveryChiller -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatRecoveryChiller">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Chiller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HermeticCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HermeticCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HighPressureMercuryLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HighPressureMercuryLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HighPressureSodiumLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HighPressureSodiumLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HoseReel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HoseReel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSuppressionTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidistat -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidistat">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HumiditySensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HumiditySensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HydraulicActuator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HydraulicActuator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Actuator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HydronicCoil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HydronicCoil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndicatorPanel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndicatorPanel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectDirectCombination -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectDirectCombination">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectEvaporativeCoolingTowerOrCoilCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectEvaporativeCoolingTowerOrCoilCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectEvaporativePackageAirCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectEvaporativePackageAirCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectEvaporativeWetCoilCooler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IndirectEvaporativeWetCoilCooler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EvaporativeCooler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InductionElectricMotor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InductionElectricMotor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricMotor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InductorBank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InductorBank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricFlowStorageDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InspectionChamber -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InspectionChamber">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InspectionPit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InspectionPit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Interceptor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Interceptor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTreatmentDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InternalcombustionEngine -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#InternalcombustionEngine">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Engine"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Inverter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Inverter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Transformer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IonConcentrationSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IonConcentrationSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IsolatingValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#IsolatingValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionBox -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionBox">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionCableFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionCableFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionDuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionDuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionPipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionPipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Keypad -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Keypad">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#KitchenMachine -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#KitchenMachine">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LEDLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LEDLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LevelSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LevelSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightAlarm -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightAlarm">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightFixture -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightFixture">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Louvre -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Louvre">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Manhole -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Manhole">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ManualPullBox -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ManualPullBox">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MechanicalForcedDraftCoolingTower -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MechanicalForcedDraftCoolingTower">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CoolingTower"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MechanicalInducedDraftCoolingTower -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MechanicalInducedDraftCoolingTower">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CoolingTower"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MedicalDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MedicalDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MetalHalideLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MetalHalideLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Meterchamber -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Meterchamber">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Microphone -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Microphone">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Microwave -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Microwave">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MimicPanel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MimicPanel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MixingValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MixingValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Modem -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Modem">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MoistureSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MoistureSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MomentarySwitch -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MomentarySwitch">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MotorConnection -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MotorConnection">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MotorControlCentre -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MotorControlCentre">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricDistributionBoard"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MovementSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MovementSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MultipositionController -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MultipositionController">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Controller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NaturalDraftCoolingTower -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NaturalDraftCoolingTower">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CoolingTower"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NetworkAppliance -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NetworkAppliance">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NetworkBridge -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NetworkBridge">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NetworkHub -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#NetworkHub">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OLEDLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OLEDLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ObstructionDuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ObstructionDuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ObstructionPipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ObstructionPipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OdorFilter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OdorFilter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OilFilter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OilFilter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OilInterceptor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OilInterceptor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Interceptor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OilMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OilMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMeter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OpenTypeCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OpenTypeCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Outlet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Outlet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OxygenGenerator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OxygenGenerator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MedicalDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OxygenPlant -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#OxygenPlant">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MedicalDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PHSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PHSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PassiveCooledBeam -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PassiveCooledBeam">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CooledBeam"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PeakVoltmeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PeakVoltmeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PetrolInterceptor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PetrolInterceptor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Interceptor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PhaseAngleMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PhaseAngleMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Photocopier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Photocopier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PlateHeatExchanger -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PlateHeatExchanger">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatExchanger"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Player -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Player">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PneumaticActuator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PneumaticActuator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Actuator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PointSourceLightFixture -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PointSourceLightFixture">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightFixture"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PolyphaseElectricMotor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PolyphaseElectricMotor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricMotor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PowerFactorMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PowerFactorMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PowerJunctionBox -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PowerJunctionBox">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#JunctionBox"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PowerOutlet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PowerOutlet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Outlet"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureGauge -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureGauge">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureReducingValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureReducingValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureReliefValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureReliefValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureVesselTank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PressureVesselTank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Printer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Printer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProgrammableController -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProgrammableController">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Controller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Projector -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Projector">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PropellorAxialFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PropellorAxialFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProportionalController -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProportionalController">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Controller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDeviceTrippingUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDeviceTrippingUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMovingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RMSVoltmeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RMSVoltmeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RadiationSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RadiationSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Radiator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Radiator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SpaceHeater"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RadioactivitySensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RadioactivitySensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RainWaterHopperStackTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RainWaterHopperStackTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StackTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Receiver -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Receiver">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReciprocatingCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReciprocatingCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RectangularDuctSilencer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RectangularDuctSilencer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSilencer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Rectifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Rectifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Transformer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReducerCableCarrierFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReducerCableCarrierFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Refrigerator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Refrigerator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Register -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Register">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RegulatingValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RegulatingValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Relay -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Relay">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricTimeControl"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReliefDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReliefDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReluctanceSynchronousElectricMotor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ReluctanceSynchronousElectricMotor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricMotor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Repeater -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Repeater">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ResidualCurrentCircuitBreaker -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ResidualCurrentCircuitBreaker">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ResidualCurrentProtectiveDeviceTrippingUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ResidualCurrentProtectiveDeviceTrippingUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDeviceTrippingUnit"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ResidualCurrentSwitch -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ResidualCurrentSwitch">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RigidDuctSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RigidDuctSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RigidPipeSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RigidPipeSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RollingPistonCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RollingPistonCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RoofDrain -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RoofDrain">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RoofTopUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RoofTopUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryEquipment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Room">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+        <rdfs:subClassOf rdf:resource="http://www.student.dtu.dk/~mhoras/bot#Space"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#DesignedArtifact"/>
+        <disjointWith rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site"/>
+        <hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBIMId"/>
+        </hasKey>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RotaryCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RotaryCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RotaryVaneCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RotaryVaneCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RotaryWheel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RotaryWheel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RoundDuctSilencer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RoundDuctSilencer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctSilencer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Router -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Router">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RunAroundCoilLoop -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#RunAroundCoilLoop">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SafetyCutOffValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SafetyCutOffValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryFountain -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryFountain">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Scanner -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Scanner">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CommunicationsAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ScrollCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ScrollCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SecurityLightingLightFixture -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SecurityLightingLightFixture">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#LightFixture"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SelectorSwitch -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SelectorSwitch">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SemiHermeticCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SemiHermeticCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ShellAndCoilEvaporator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ShellAndCoilEvaporator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Evaporator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ShellAndTubeHeatExchanger -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ShellAndTubeHeatExchanger">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#HeatExchanger"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Shower -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Shower">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SingleScrewCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SingleScrewCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sink -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sink">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Siren -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Siren">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Site">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Facility"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa.istc.cnr.it/ontologies/DUL.owl#PhysicalPlace"/>
+        <hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#hasBIMId"/>
+        </hasKey>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SmokeDamper -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SmokeDamper">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Damper"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SmokeSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SmokeSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarCollector -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarCollector">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarPanel -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarPanel">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SolarDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SoundSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SoundSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SpaceHeater -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SpaceHeater">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Speaker -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Speaker">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SplitCasePump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SplitCasePump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SplitSystem -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SplitSystem">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryEquipment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SpoolPipeSegment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SpoolPipeSegment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeSegment"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sprinkler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sprinkler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSuppressionTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SprinklerDeflector -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SprinklerDeflector">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FireSuppressionTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StackTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StackTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StandaloneElectricGenerator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StandaloneElectricGenerator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricGenerator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Starter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Starter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamBoiler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamBoiler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Boiler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamHeatingCoil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamHeatingCoil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamInjectionHumidifier -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamInjectionHumidifier">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Humidifier"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamTrapValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SteamTrapValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StopcockValve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StopcockValve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StorageTank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#StorageTank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Strainer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Strainer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SubmersiblePump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SubmersiblePump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SumpPump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SumpPump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchDisconnector -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchDisconnector">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Switcher -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Switcher">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SynchronousElectricMotor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SynchronousElectricMotor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricMotor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowStorageDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TeeCableCarrierFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TeeCableCarrierFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableCarrierFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Telephone -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Telephone">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TelephoneOutlet -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TelephoneOutlet">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Outlet"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TemperatureSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermalProtectiveDeviceTrippingUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermalProtectiveDeviceTrippingUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDeviceTrippingUnit"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermoMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermoMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowInstrument"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermoSiphonCoilTypeHeatExchangers -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermoSiphonCoilTypeHeatExchangers">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermoSiphonSealedTubeHeatExchangers -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermoSiphonSealedTubeHeatExchangers">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Thermostat -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Thermostat">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermostaticActuator -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ThermostaticActuator">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Actuator"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TimeClock -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TimeClock">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricTimeControl"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TimeDelay -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TimeDelay">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricTimeControl"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ToggleSwitch -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ToggleSwitch">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SwitchingDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ToiletPan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ToiletPan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Transformer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Transformer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TransitionCableFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TransitionCableFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#CableFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TransitionDuctFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TransitionDuctFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DuctFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TransitionPipeFitting -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TransitionPipeFitting">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#PipeFitting"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Trench -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Trench">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TrochoidalCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TrochoidalCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TubeAxialFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TubeAxialFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TubeBundle -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TubeBundle">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TumbleDryer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TumbleDryer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tuner -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tuner">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AudioVisualAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TungstenFilamentLamp -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TungstenFilamentLamp">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Lamp"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TwinScrewCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TwinScrewCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TwinTowerEnthalpyRecoveryLoops -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TwinTowerEnthalpyRecoveryLoops">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirToAirHeatRecovery"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TwoPositionController -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#TwoPositionController">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Controller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UPS -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UPS">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricFlowStorageDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryEquipment -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryEquipment">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#EnergyConversionDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Urinal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Urinal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VacuumStation -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VacuumStation">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#MedicalDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Valve">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowController"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ValveChamber -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ValveChamber">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#DistributionChamberElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VaneAxialFan -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VaneAxialFan">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Fan"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VariableFlowPressureDependantAirTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VariableFlowPressureDependantAirTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminalBox"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VariableFlowPressureIndependantAirTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VariableFlowPressureIndependantAirTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#AirTerminalBox"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Varistor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Varistor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ProtectiveDevice"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VendingMachine -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VendingMachine">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VerticalInLinePump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VerticalInLinePump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VerticalTurbinePump -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VerticalTurbinePump">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Pump"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VesselTank -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VesselTank">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Tank"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VoltageTransformer -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#VoltageTransformer">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Transformer"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WCSeat -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WCSeat">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WashHandBasin -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WashHandBasin">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#SanitaryTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WashingMachine -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WashingMachine">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#ElectricAppliance"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteDisposalUnit -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteDisposalUnit">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTrap -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTrap">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WasteTerminal"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterBoiler -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterBoiler">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Boiler"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledBrazedPlateCondenser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledBrazedPlateCondenser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledChiller -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledChiller">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Chiller"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledCondenser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledCondenser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledShellCoilCondenser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledShellCoilCondenser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledShellTubeCondenser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledShellTubeCondenser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledTubeInTubeCondenser -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCooledTubeInTubeCondenser">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Condenser"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCoolingCoil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterCoolingCoil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterFilter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterFilter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Filter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterHeatingCoil -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterHeatingCoil">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Coil"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterMeter -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WaterMeter">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#FlowMeter"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WeatherStation -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WeatherStation">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#UnitaryControlElement"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WeldedShellHermeticCompressor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WeldedShellHermeticCompressor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Compressor"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Whistle -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Whistle">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Alarm"/>
+    </Class>
+    
+
+
+    <!-- http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WindSensor -->
+
+    <Class rdf:about="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#WindSensor">
+        <rdfs:subClassOf rdf:resource="http://is.muni.cz/www/255658/sbms/v2_0/SemanticBIM#Sensor"/>
+    </Class>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/ontologies/DUL.owl#DesignedArtifact -->
+
+    <Class rdf:about="http://www.loa.istc.cnr.it/ontologies/DUL.owl#DesignedArtifact"/>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/ontologies/DUL.owl#PhysicalPlace -->
+
+    <Class rdf:about="http://www.loa.istc.cnr.it/ontologies/DUL.owl#PhysicalPlace"/>
+    
+
+
+    
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
